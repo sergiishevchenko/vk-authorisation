@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from vk_authorisation.views import VKAuth
+from vk_authorisation.views import authorisation, user_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('authorisation/', VKAuth.auth, name='auth'),
-    path('login/', VKAuth._log_in, name='_log_in'),
+    path('', authorisation, name='authorisation'),
+    path('user_page/', user_page, name='user_page'),
 ]
