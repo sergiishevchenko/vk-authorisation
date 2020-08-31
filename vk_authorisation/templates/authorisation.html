@@ -9,8 +9,9 @@
     </head>
     <body>
         <section class="authorisation" style="margin-left: 50px">
-            <form enctype="multipart/form-data" method="post">
+            <form enctype="multipart/form-data" method="post" action="{% url 'user_page' %}">
                 {% csrf_token %}
+                <h3>Попробуйте авторизоваться!</h3>
                 <p class="text-left">Login</p>
                 <p class="text-left"><input type="text" id="width" name="width" required placeholder="Введите логин"></p>
                 <p class="text-left">Password</p>
