@@ -2,6 +2,7 @@ from django.shortcuts import render
 import requests
 import getpass
 from html.parser import HTMLParser
+from vk_authorisation.forms import AuthForm
 from config import access_token, APP_ID
 
 
@@ -150,6 +151,7 @@ def authorisation(request):
                 self.response = None
 
         def _log_in(self):
+
             if self.email is None:
                 self.email = ''
                 while self.email.strip() == '':
@@ -227,7 +229,7 @@ def authorisation(request):
             self.email = None
             self.pswd = None
 
-    vk = VKAuth(['friends'], APP_ID, '5.122')
+    vk = VKAuth([''], APP_ID, '5.122')
     vk.auth()
     # token = vk.get_token()
     # user_id = vk.get_user_id()
