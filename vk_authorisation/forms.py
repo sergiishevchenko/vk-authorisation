@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from test_project.models import Post
+from vk_authorisation.models import Post
 
 class AuthForm(ModelForm):
     class Meta:
