@@ -7,6 +7,11 @@ vk_session = vk_api.VkApi(login, password)
 
 vk_session.auth()
 
+if vk_session:
+    print('Авторизация прошла успешно!')
+else:
+    print('Авторизация не удалась!')
+
 vk = vk_session.get_api()
 
 def get_friends(user_id):
